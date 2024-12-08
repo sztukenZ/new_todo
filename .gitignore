@@ -1,0 +1,46 @@
+# Node.js (dla frontendu)
+frontend/node_modules/
+frontend/.env
+frontend/.env.local
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/build/
+frontend/.vercel/
+frontend/.cache/
+frontend/.turbo/
+
+# System plików i edytorów
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.lock
+*.tmp
+*.bak
+
+# Python (dla backendu)
+todoist_clone/__pycache__/
+todoist_clone/db.sqlite3
+todoist_clone/env/
+todoist_clone/.venv/
+todoist_clone/.env
+todoist_clone/.pytest_cache/
+todoist_clone/media/
+todoist_clone/staticfiles/
+todoist_clone/static/
+
+# Globalne ignorowanie testowych danych
+*.pyc
+*.pyo
+*.swp
+
+# Logi i raporty
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# MacOS specyficzne
+._*

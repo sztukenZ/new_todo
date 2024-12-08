@@ -1,0 +1,208 @@
+/* Globalne ustawienia */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --s: 82px; /* control the size*/
+  --c1: #b2b2b2;
+  --c2: #ffffff;
+  --c3: #d9d9d9;
+
+  --_g: var(--c3) 0 120deg,#0000 0;
+  background:
+    conic-gradient(from -60deg at 50% calc(100%/3),var(--_g)),
+    conic-gradient(from 120deg at 50% calc(200%/3),var(--_g)),
+    conic-gradient(from  60deg at calc(200%/3),var(--c3) 60deg,var(--c2) 0 120deg,#0000 0),
+    conic-gradient(from 180deg at calc(100%/3),var(--c1) 60deg,var(--_g)),
+    linear-gradient(90deg,var(--c1)   calc(100%/6),var(--c2) 0 50%,
+                          var(--c1) 0 calc(500%/6),var(--c2) 0);
+  background-size: calc(1.732*var(--s)) var(--s);
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #333333; /* Neutralny ciemnoszary */
+  box-sizing: border-box;
+}
+
+/* Główne opakowanie aplikacji */
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Zwiększona szerokość */
+  background-color: #ffffff; /* Białe tło */
+  padding: 40px 30px;
+  border-radius: 28px; /* Bardziej zaokrąglone rogi */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Elegancki cień */
+}
+
+/* Nagłówek */
+h1 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 30px;
+  font-size: 2.4rem; /* Większy font */
+  font-weight: 600;
+}
+
+/* Formularz */
+form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 700px; /* Dopasowanie do nowej szerokości kontenera */
+  margin-bottom: 30px;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+input {
+  flex: 1; /* Input zajmuje maksymalną dostępną przestrzeń */
+  padding: 15px;
+  border: 2px solid #e0e0e0; /* Neutralna ramka */
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  color: #333333;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #B7B7B7; /* Fioletowe podświetlenie */
+}
+
+button {
+  padding: 15px 20px;
+  background-color: #B7B7B7; /* Fioletowy */
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #758694; /* Ciemniejszy fiolet na hover */
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+
+/* Lista zadań */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Dopasowanie szerokości */
+  max-width: 700px; /* Dostosowanie do nowej szerokości */
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  margin-bottom: 15px; /* Odstęp między zadaniami */
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Delikatny cień */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: #999999; /* Szary tekst */
+}
+
+/* Ikony */
+.faCheck, .faTrash {
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.faCheck {
+  color: #B7B7B7;
+}
+
+.faCheck:hover {
+  color: #758694;
+  transform: scale(1.1);
+}
+
+.faTrash {
+  color: #ff6b6b;
+}
+
+.faTrash:hover {
+  color: #d55b5b;
+  transform: scale(1.1);
+}
+
+.content-container {
+  width: 100%;
+  max-width: 700px; /* Dostosowanie do nowej szerokości */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Odstęp między elementami */
+}
+
+.task-list {
+  list-style: none;
+  padding: 0; /* Usuń domyślny padding */
+  margin: 0;
+}
+
+.task-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%; /* Okrągły kształt */
+  background-color: #B7B7B7; /* Fioletowy kolor */
+  color: white; /* Biała ikona */
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-button:hover {
+  background-color: #758694; /* Ciemniejszy fiolet */
+  box-shadow: 0 6px 15px rgba(108, 99, 255, 0.3);
+  transform: scale(1.1); /* Powiększenie na hover */
+}
+
+.task-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-right: 10px; /* Odstęp od przycisku */
+}
+
+.alert-success {
+  background-color: #B7B7B7; /* Nowy kolor tła */
+  color: white; /* Dopasowanie koloru tekstu */
+  padding: 10px 20px;
+  border-radius: 8px; /* Zaokrąglenie narożników */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  font-size: 1rem;
+}
